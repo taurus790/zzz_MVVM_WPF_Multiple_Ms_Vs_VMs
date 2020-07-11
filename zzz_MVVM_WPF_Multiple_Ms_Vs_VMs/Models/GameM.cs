@@ -24,6 +24,11 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
             set { _myWorld = value; OnPropertyChanged(nameof(MyWorld)); }
         }
 
+        public GameM()
+        {
+            Name = "Game 2";
+            MyWorld = new WorldM();
+        }
 
         public bool ChangeName()
         {

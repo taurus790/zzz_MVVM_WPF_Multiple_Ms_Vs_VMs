@@ -30,6 +30,11 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
             set { _stations = value; OnPropertyChanged(nameof(Stations)); }
         }
 
+        public WorldM()
+        {
+            Name = "World 1";
+        }
+
         public bool ChangeName()
         {
             Name = Name + "1";

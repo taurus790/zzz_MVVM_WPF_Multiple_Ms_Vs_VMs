@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\BaseVMs\BaseViewModel.cs" />
+    <Compile Include="ViewModels\GameVM.cs" />
     <Compile Include="Views\GameV.xaml.cs">
       <DependentUpon>GameV.xaml</DependentUpon>
     </Compile>
@@ -120,8 +122,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\BaseVMs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

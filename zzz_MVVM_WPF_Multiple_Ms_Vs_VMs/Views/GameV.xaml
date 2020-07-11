@@ -14,10 +14,10 @@
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="This Game"/>
                 <TextBlock Text="Name"/>
-                <TextBlock x:Name="Name"/>
+                <TextBlock x:Name="Name" Text="{Binding Path=Name}"/>
                 <TextBlock Text="World"/>
-                <TextBlock x:Name="World"/>
-                <Button Content="Change Name"/>
+                <TextBlock x:Name="World" Text="{Binding Path=MyWorld.Name}"/>
+                <Button Content="Change Name" Command="{Binding Path=ChangeNameCommand}" />
             </StackPanel>
         </Border>
 

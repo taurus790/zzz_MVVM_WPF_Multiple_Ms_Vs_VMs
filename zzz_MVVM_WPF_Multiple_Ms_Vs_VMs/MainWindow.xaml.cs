@@ -13,16 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels;
+
 namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
+        GameVM myGame;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            myGame = new GameVM();
+            this.DataContext = myGame;
         }
     }
 }
