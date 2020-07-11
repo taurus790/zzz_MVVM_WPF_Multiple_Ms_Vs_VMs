@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:zzz_MVVM_WPF_Multiple_Ms_Vs_VMs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800"
         
-    </Grid>
+        xmlns:views="clr-namespace:zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Views">
+
+    <views:Game>
+        
+    </views:Game>
+    
 </Window>

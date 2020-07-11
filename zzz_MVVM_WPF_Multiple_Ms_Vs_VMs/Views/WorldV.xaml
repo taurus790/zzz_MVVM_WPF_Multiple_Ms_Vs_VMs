@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Views.WorldV"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <StackPanel Orientation="Vertical">
+
+        <Border>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Name"/>
+                <TextBlock x:Name="Name"/>
+                <TextBlock Text="Selected Station"/>
+                <TextBlock x:Name="SelectedStation"/>
+                <TextBlock Text="Stations"/>
+                <TextBlock x:Name="Stations"/>
+                <Button Content="Change Name"/>
+            </StackPanel>
+        </Border>
+
+        <Border>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Selected Station"/>
+                <local:Station/>
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+
+</UserControl>
