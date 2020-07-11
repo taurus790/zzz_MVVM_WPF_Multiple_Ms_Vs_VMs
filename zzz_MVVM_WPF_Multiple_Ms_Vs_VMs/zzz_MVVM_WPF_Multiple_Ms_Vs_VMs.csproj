@@ -69,6 +69,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BaseMs\BaseModel.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Station.cs" />
+    <Compile Include="Models\World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,7 +100,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
-    <Folder Include="Models\BaseMs\" />
     <Folder Include="ViewModels\BaseVMs\" />
     <Folder Include="Views\" />
   </ItemGroup>
