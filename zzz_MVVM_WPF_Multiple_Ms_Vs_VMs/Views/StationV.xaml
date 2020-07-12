@@ -9,12 +9,31 @@
 
     <StackPanel Orientation="Vertical">
         
-        <Border>
-            <StackPanel Orientation="Vertical">
-                <TextBlock Text="Name"/>
-                <TextBlock x:Name="Name"/>
-                <Button Content="Change Name"/>
-            </StackPanel>
+        <Border BorderBrush="Aqua" BorderThickness="2" 
+                Margin="5" Padding="5">
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Station Info"
+                           Grid.Row="0" Grid.Column="0" 
+                           HorizontalAlignment="Center"
+                           Grid.ColumnSpan="2"/>
+                <TextBlock Text="Name" 
+                           Grid.Row="1" Grid.Column="0"/>
+                <TextBlock x:Name="Name" 
+                           Grid.Row="1" Grid.Column="1"/>
+                <Button Content="Change Name" 
+                           Grid.Row="2" Grid.Column="1"/>
+            </Grid>
         </Border>
 
     </StackPanel>

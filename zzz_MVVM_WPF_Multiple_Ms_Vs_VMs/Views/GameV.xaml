@@ -9,19 +9,48 @@
 
     <StackPanel Orientation="Vertical">
 
-        <Border>
+        <Border BorderBrush="Aqua" BorderThickness="2" 
+                Margin="5" Padding="5">
 
-            <StackPanel Orientation="Vertical">
-                <TextBlock Text="This Game"/>
-                <TextBlock Text="Name"/>
-                <TextBlock x:Name="Name" Text="{Binding Path=Name}"/>
-                <TextBlock Text="World"/>
-                <TextBlock x:Name="World" Text="{Binding Path=MyWorld.Name}"/>
-                <Button Content="Change Name" Command="{Binding Path=ChangeNameCommand}" />
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Text="Game Info"
+                           Grid.Row="0" Grid.Column="0" 
+                           HorizontalAlignment="Center"
+                           Grid.ColumnSpan="2"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           Text="Name"/>
+                <TextBlock x:Name="Name" 
+                           Grid.Row="1" Grid.Column="1"
+                           Text="{Binding Path=Name}"/>
+                
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                           Text="World"/>
+                <TextBlock x:Name="World" 
+                           Grid.Row="2" Grid.Column="1"
+                           Text="{Binding Path=MyWorld.Name}"/>
+                
+                <Button Grid.Row="3" Grid.Column="1"
+                        Content="Change Name" 
+                        Command="{Binding Path=ChangeNameCommand}" />
+                
+            </Grid>
+            
         </Border>
 
-        <Border>
+        <Border BorderBrush="LightBlue"  BorderThickness="2" 
+                Margin="5" Padding="5">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="My World"/>
                 <local:WorldV DataContext="{Binding Path=MyWorld}"/>
