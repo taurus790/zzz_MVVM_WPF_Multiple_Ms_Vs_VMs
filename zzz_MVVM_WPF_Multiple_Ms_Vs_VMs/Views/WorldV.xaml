@@ -57,8 +57,13 @@
         <Border BorderBrush="LightBlue"  BorderThickness="2" 
                 Margin="5" Padding="5">
             <StackPanel Orientation="Vertical">
+                
                 <TextBlock Text="Selected Station"/>
-                <local:Station/>
+                
+                <local:Station DataContext="{Binding Path=SelectedStation}"/>
+                
+                <Button Content="Add Station" 
+                        Command="{Binding Path=AddStationCommand}"/>
             </StackPanel>
         </Border>
 

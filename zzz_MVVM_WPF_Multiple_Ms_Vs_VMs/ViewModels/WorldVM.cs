@@ -17,7 +17,7 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
         #region Private attributes and public properties.
         private WorldM _myWorld;
         private string _name;
-        private StationM _selectedStation;
+        private StationVM _selectedStation;
         private ObservableCollection<StationM> _stations;
 
         public WorldM MyWorld
@@ -30,7 +30,7 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
             get { return _name; }
             set { _name = value; OnPropertyChanged(nameof(Name)); }
         }
-        public StationM SelectedStation
+        public StationVM SelectedStation
         {
             get { return _selectedStation; }
             set { _selectedStation = value; OnPropertyChanged(nameof(SelectedStation)); }
@@ -44,11 +44,17 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
 
         #region Relay commands. 
         private RelayCommand _changeNameCommand;
+        private RelayCommand _addStationCommand;
 
         public RelayCommand ChangeNameCommand
         {
             get { return _changeNameCommand; }
         }
+        public RelayCommand AddStationCommand
+        {
+            get { return _addStationCommand; }
+        }
+
         #endregion
 
         #region Constructor. 
@@ -68,6 +74,7 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
             LoadData();
 
             _changeNameCommand = new RelayCommand(ChangeName);
+            _addStationCommand = new RelayCommand(AddStation);
         }
         #endregion
 
@@ -75,13 +82,19 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
         public void LoadData()
         {
             Name = MyWorld.Name;
-            SelectedStation = MyWorld.SelectedStation;
+            SelectedStation = new StationVM(MyWorld.SelectedStation);
             Stations = new ObservableCollection<StationM>(MyWorld.Stations);
         }
 
         public void ChangeName()
         {
             MyWorld.ChangeName();
+            LoadData();
+        }
+
+        public void AddStation()
+        {
+            MyWorld.AddStation();
             LoadData();
         }
         #endregion

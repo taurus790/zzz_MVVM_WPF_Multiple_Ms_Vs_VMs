@@ -27,12 +27,17 @@
                            Grid.Row="0" Grid.Column="0" 
                            HorizontalAlignment="Center"
                            Grid.ColumnSpan="2"/>
-                <TextBlock Text="Name" 
-                           Grid.Row="1" Grid.Column="0"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           Text="Name"/>
                 <TextBlock x:Name="Name" 
-                           Grid.Row="1" Grid.Column="1"/>
-                <Button Content="Change Name" 
-                           Grid.Row="2" Grid.Column="1"/>
+                           Grid.Row="1" Grid.Column="1"
+                           Text="{Binding Path=Name}"/>
+                
+                <Button Grid.Row="2" Grid.Column="1"
+                        Content="Change Name"
+                        Command="{Binding Path=ChangeNameCommand}"/>
+                
             </Grid>
         </Border>
 

@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModels\BaseVMs\BaseViewModel.cs" />
     <Compile Include="ViewModels\GameVM.cs" />
+    <Compile Include="ViewModels\StationVM.cs" />
     <Compile Include="ViewModels\WorldVM.cs" />
     <Compile Include="Views\GameV.xaml.cs">
       <DependentUpon>GameV.xaml</DependentUpon>

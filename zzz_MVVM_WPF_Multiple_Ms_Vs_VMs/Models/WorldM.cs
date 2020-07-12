@@ -48,6 +48,17 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
             Name = Name + "1";
             return true;
         }
+
+        public bool AddStation()
+        {
+            StationM newStation = new StationM();
+            newStation.Name = "Station " + Stations.Count;
+
+            SelectedStation = newStation;
+            Stations.Add(SelectedStation);
+
+            return true;
+        }
         #endregion
     }
 }
