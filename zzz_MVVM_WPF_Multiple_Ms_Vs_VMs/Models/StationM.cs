@@ -10,6 +10,7 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
 {
     class StationM: BaseModel
     {
+        #region Private attributes and public properties. 
         private string _name;
 
         public string Name
@@ -17,11 +18,21 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
             get { return _name; }
             set { _name = value; OnPropertyChanged(nameof(Name)); }
         }
+        #endregion
 
+        #region Constructor. 
+        StationM()
+        {
+            Name = "Station3";
+        }
+        #endregion
+
+        #region Methods.
         public bool ChangeName()
         {
             Name = Name + "1";
             return true;
         }
+        #endregion
     }
 }

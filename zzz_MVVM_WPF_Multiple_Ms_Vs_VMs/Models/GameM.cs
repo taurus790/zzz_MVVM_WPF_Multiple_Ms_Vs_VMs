@@ -10,6 +10,7 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
 {
     class GameM : BaseModel
     {
+        #region Private attributes and public properties.
         private string _name;
         private WorldM _myWorld;
 
@@ -23,17 +24,22 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
             get { return _myWorld; }
             set { _myWorld = value; OnPropertyChanged(nameof(MyWorld)); }
         }
+        #endregion
 
+        #region Constructor. 
         public GameM()
         {
-            Name = "Game 2";
+            Name = "Game 1";
             MyWorld = new WorldM();
         }
+        #endregion
 
+        #region Methods. 
         public bool ChangeName()
         {
             Name = Name + "1";
             return true;
         }
+        #endregion
     }
 }

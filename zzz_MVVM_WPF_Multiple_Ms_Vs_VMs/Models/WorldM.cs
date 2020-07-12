@@ -8,8 +8,9 @@ using zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models.BaseMs;
 
 namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
 {
-    class WorldM:BaseModel
+    class WorldM : BaseModel
     {
+        #region Private attributes and public properties. 
         private string _name;
         private StationM _selectedStation;
         private List<StationM> _stations;
@@ -29,16 +30,21 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
             get { return _stations; }
             set { _stations = value; OnPropertyChanged(nameof(Stations)); }
         }
+        #endregion
 
+        #region Constructor. 
         public WorldM()
         {
-            Name = "World 1";
+            Name = "World 2";
         }
+        #endregion
 
+        #region Methods.
         public bool ChangeName()
         {
             Name = Name + "1";
             return true;
         }
+        #endregion
     }
 }
