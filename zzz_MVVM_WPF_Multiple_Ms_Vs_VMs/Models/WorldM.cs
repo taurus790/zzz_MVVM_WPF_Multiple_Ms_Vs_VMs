@@ -36,6 +36,9 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
         public WorldM()
         {
             Name = "World 2";
+            SelectedStation = new StationM();
+            Stations = new List<StationM>();
+            Stations.Add(SelectedStation);
         }
         #endregion
 

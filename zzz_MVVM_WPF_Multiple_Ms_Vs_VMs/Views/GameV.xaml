@@ -24,7 +24,7 @@
         <Border>
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="My World"/>
-                <local:WorldV/>
+                <local:WorldV DataContext="{Binding Path=MyWorld}"/>
             </StackPanel>
         </Border>
 

@@ -12,12 +12,12 @@
         <Border>
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Name"/>
-                <TextBlock x:Name="Name"/>
+                <TextBlock x:Name="Name" Text="{Binding Path=Name}"/>
                 <TextBlock Text="Selected Station"/>
-                <TextBlock x:Name="SelectedStation"/>
-                <TextBlock Text="Stations"/>
-                <TextBlock x:Name="Stations"/>
-                <Button Content="Change Name"/>
+                <TextBlock x:Name="SelectedStation" Text="{Binding Path=SelectedStation.Name}"/>
+                <TextBlock Text="Stations Amt."/>
+                <TextBlock x:Name="StationsAmt" Text="{Binding Path=Stations.Count}"/>
+                <Button Content="Change Name" Command="{Binding Path=ChangeNameCommand}"/>
             </StackPanel>
         </Border>
 

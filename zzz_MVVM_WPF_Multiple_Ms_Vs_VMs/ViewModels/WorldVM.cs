@@ -8,30 +8,37 @@ using zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels;
 using zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels.BaseVMs;
 using zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models;
 using zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Commands;
+using System.Collections.ObjectModel;
 
 namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
 {
-    class GameVM : BaseViewModel
+    class WorldVM : BaseViewModel
     {
         #region Private attributes and public properties.
-        private GameM _myGame;
+        private WorldM _myWorld;
         private string _name;
-        private WorldVM _myWorld;
+        private StationM _selectedStation;
+        private ObservableCollection<StationM> _stations;
 
-        public GameM MyGame
+        public WorldM MyWorld
         {
-            get { return _myGame; }
-            set { _myGame = value; OnPropertyChanged(nameof(MyGame)); }
+            get { return _myWorld; }
+            set { _myWorld = value; OnPropertyChanged(nameof(MyWorld)); }
         }
-        public string Name
+        public string  Name
         {
             get { return _name; }
             set { _name = value; OnPropertyChanged(nameof(Name)); }
         }
-        public WorldVM MyWorld
+        public StationM SelectedStation
         {
-            get { return _myWorld; }
-            set { _myWorld = value; OnPropertyChanged(nameof(MyWorld)); }
+            get { return _selectedStation; }
+            set { _selectedStation = value; OnPropertyChanged(nameof(SelectedStation)); }
+        }
+        public ObservableCollection<StationM> Stations
+        {
+            get { return _stations; }
+            set { _stations = value; OnPropertyChanged(nameof(Stations)); }
         }
         #endregion
 
@@ -45,9 +52,18 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
         #endregion
 
         #region Constructor. 
-        public GameVM()
+        /* public WorldVM()
         {
-            MyGame = new GameM();
+            MyWorld = new WorldM();
+
+            LoadData();
+
+            _changeNameCommand = new RelayCommand(ChangeName);
+        }
+        */
+        public WorldVM(WorldM _world)
+        {
+            MyWorld = _world;
 
             LoadData();
 
@@ -58,13 +74,14 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
         #region Methods. 
         public void LoadData()
         {
-            Name = MyGame.Name;
-            MyWorld = new WorldVM(MyGame.MyWorld);
+            Name = MyWorld.Name;
+            SelectedStation = MyWorld.SelectedStation;
+            Stations = new ObservableCollection<StationM>(MyWorld.Stations);
         }
 
         public void ChangeName()
         {
-            MyGame.ChangeName();
+            MyWorld.ChangeName();
             LoadData();
         }
         #endregion

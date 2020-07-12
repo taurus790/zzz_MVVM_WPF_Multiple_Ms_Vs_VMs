@@ -21,7 +21,7 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.Models
         #endregion
 
         #region Constructor. 
-        StationM()
+        public StationM()
         {
             Name = "Station3";
         }
