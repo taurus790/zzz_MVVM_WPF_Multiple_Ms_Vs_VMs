@@ -9,7 +9,7 @@
 
     <StackPanel Orientation="Vertical">
         
-        <Border BorderBrush="Aqua" BorderThickness="2" 
+        <Border BorderBrush="Aquamarine" BorderThickness="2" 
                 Margin="5" Padding="5">
             
             <Grid>

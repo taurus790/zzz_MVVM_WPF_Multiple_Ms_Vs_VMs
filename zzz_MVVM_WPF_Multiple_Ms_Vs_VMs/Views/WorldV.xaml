@@ -9,7 +9,7 @@
 
     <StackPanel Orientation="Vertical">
 
-        <Border BorderBrush="Aqua" BorderThickness="2" 
+        <Border BorderBrush="LightBlue" BorderThickness="2" 
                 Margin="5" Padding="5">
 
             <Grid>
@@ -57,14 +57,34 @@
         <Border BorderBrush="LightBlue"  BorderThickness="2" 
                 Margin="5" Padding="5">
             <StackPanel Orientation="Vertical">
-                
+
                 <TextBlock Text="Selected Station"/>
-                
+
                 <local:Station DataContext="{Binding Path=SelectedStation}"/>
-                
+
                 <Button Content="Add Station" 
                         Command="{Binding Path=AddStationCommand}"/>
             </StackPanel>
+        </Border>
+
+        <Border BorderBrush="LightBlue"  BorderThickness="2" 
+                Margin="5" Padding="5"
+                MaxHeight="400">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical">
+
+                    <TextBlock Text="List of Stations"/>
+
+                    <ItemsControl ItemsSource="{Binding Stations}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:Station />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    
+                </StackPanel>
+            </ScrollViewer>
         </Border>
 
     </StackPanel>

@@ -18,7 +18,7 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
         private WorldM _myWorld;
         private string _name;
         private StationVM _selectedStation;
-        private ObservableCollection<StationM> _stations;
+        private ObservableCollection<StationVM> _stations;
 
         public WorldM MyWorld
         {
@@ -35,7 +35,7 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
             get { return _selectedStation; }
             set { _selectedStation = value; OnPropertyChanged(nameof(SelectedStation)); }
         }
-        public ObservableCollection<StationM> Stations
+        public ObservableCollection<StationVM> Stations
         {
             get { return _stations; }
             set { _stations = value; OnPropertyChanged(nameof(Stations)); }
@@ -83,7 +83,12 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
         {
             Name = MyWorld.Name;
             SelectedStation = new StationVM(MyWorld.SelectedStation);
-            Stations = new ObservableCollection<StationM>(MyWorld.Stations);
+            Stations = new ObservableCollection<StationVM>();
+
+            for (int i = 0; i < MyWorld.Stations.Count; i++)
+            {
+                Stations.Add(new StationVM(MyWorld.Stations[i]));
+            }
         }
 
         public void ChangeName()
