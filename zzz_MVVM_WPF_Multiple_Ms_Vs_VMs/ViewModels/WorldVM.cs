@@ -82,13 +82,13 @@ namespace zzz_MVVM_WPF_Multiple_Ms_Vs_VMs.ViewModels
         public void LoadData()
         {
             Name = MyWorld.Name;
-            SelectedStation = new StationVM(MyWorld.SelectedStation);
             Stations = new ObservableCollection<StationVM>();
 
             for (int i = 0; i < MyWorld.Stations.Count; i++)
             {
                 Stations.Add(new StationVM(MyWorld.Stations[i]));
             }
+            SelectedStation = Stations.ElementAt(MyWorld.Stations.IndexOf(MyWorld.SelectedStation));
         }
 
         public void ChangeName()

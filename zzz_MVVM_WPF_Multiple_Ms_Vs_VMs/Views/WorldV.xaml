@@ -38,10 +38,11 @@
 
                 <TextBlock Grid.Row="2" Grid.Column="0"
                            Text="Selected Station"/>
+                
                 <TextBlock x:Name="SelectedStation" 
                            Grid.Row="2" Grid.Column="1"
                            Text="{Binding Path=SelectedStation.Name}"/>
-
+                
                 <TextBlock Grid.Row="3" Grid.Column="0"
                            Text="Stations Amt."/>
                 <TextBlock x:Name="StationsAmt"
@@ -75,14 +76,14 @@
 
                     <TextBlock Text="List of Stations"/>
 
-                    <ItemsControl ItemsSource="{Binding Stations}">
+                    <ItemsControl ItemsSource="{Binding Path=Stations}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <local:Station />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
-                    
+
                 </StackPanel>
             </ScrollViewer>
         </Border>
